@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.sphere {
+    width: 150px;
+    height: 150px;
+    background-color: #3498db; /* Cor inicial */
+    border-radius: 50%; /* Forma de círculo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    position: relative;
+    z-index: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 50%, rgba(52, 152, 219, 1) 80%);
+    transition: all 0.3s ease; /* Transição suave para sombra, cor e gradiente */
+}
+
+/* Efeito de brilho ao passar o mouse */
+.sphere:hover {
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3), 0 0 100px rgba(255, 255, 255, 0.5); /* Aumenta o brilho e a sombra */
+    transform: scale(1.1) rotate(10deg); /* Efeito 3D com rotação e aumento */
+}
+
+/* Animando a esfera */
+@keyframes sphere-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.sphere {
+    animation: sphere-animation 10s infinite linear; /* Animação suave de rotação para efeito 3D */
+}
